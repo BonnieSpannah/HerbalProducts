@@ -24,6 +24,9 @@
     <link rel="stylesheet" href="{{ asset('star_admin_template') }}/css/vertical-layout-light/style.css">
     <!-- endinject -->
     <link rel="shortcut icon" href="{{ asset('star_admin_template') }}/images/favicon.png"/>
+
+    <link rel="stylesheet" href="{{ asset('star_admin_template') }}/vendors/select2/select2.min.css">
+    <link rel="stylesheet" href="{{ asset('star_admin_template') }}/vendors/select2-bootstrap-theme/select2-bootstrap.min.css">
 </head>
 <body>
 @auth()
@@ -133,5 +136,8 @@
 <script src="{{ asset('star_admin_template') }}/js/dashboard.js"></script>
 <script src="{{ asset('star_admin_template') }}/js/Chart.roundedBarCharts.js"></script>
 <!-- End custom js for this page-->
+
+<script src="{{ asset('star_admin_template') }}/js/select2.js"></script>
+<script src="{{ asset('star_admin_template') }}/vendors/select2/select2.min.js"></script>
 </body>
 </html>

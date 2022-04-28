@@ -10,9 +10,11 @@
 
                     <div class="form-group">
                         <input type="email" class="form-control form-control-lg @error('email') is-invalid @enderror" id="exampleInputEmail1" placeholder="Email address" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                        @include('alerts.feedback', ['field' => 'email'])
                     </div>
                     <div class="form-group">
                         <input type="password" class="form-control form-control-lg @error('password') is-invalid @enderror" id="exampleInputPassword1" placeholder="Password" name="password" required autocomplete="current-password">
+                        @include('alerts.feedback', ['field' => 'password'])
                     </div>
                     <div class="mt-3">
                         <button type="submit" class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn">

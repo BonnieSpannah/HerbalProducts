@@ -8,6 +8,10 @@
                 <p class="card-description">
                     All registered users in the system
                 </p>
+
+                @include('alerts.success')
+                @include('alerts.fail')
+
                 <div class="table-responsive">
                     <table class="table table-striped">
                         <thead>

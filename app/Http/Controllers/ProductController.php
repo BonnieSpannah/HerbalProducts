@@ -9,7 +9,13 @@ class ProductController extends Controller
 {
     public function index()
     {
-        $products = Product::all();
+        if (auth()->user()->role == 'Human Admin') {
+            $products = Product::where('type', 1)->get();
+        } else if (auth()->user()->role == 'Animal Admin') {
+            $products = Product::where('type', 2)->get();
+        } else {
+            $products = Product::all();
+        }
 
         return view('products.index', compact('products'));
     }

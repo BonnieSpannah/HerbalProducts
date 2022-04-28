@@ -2,11 +2,9 @@
 
 namespace App\Http\Requests;
 
-use App\User;
 use Illuminate\Foundation\Http\FormRequest;
-use Illuminate\Validation\Rule;
 
-class UserRequest extends FormRequest
+class ProductRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -26,9 +24,10 @@ class UserRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => ['required', 'min:5'],
-            'email' => ['required', 'email', Rule::unique((new User)->getTable())->ignore($this->route()->user->id ?? null)],
-            'role' => ['required']
+            'luo_name' => ['required'],
+            'scientific_name' => ['required'],
+            'type' => ['required'],
+            'treatment' => ['required']
         ];
     }
 }

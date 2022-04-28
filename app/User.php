@@ -35,10 +35,11 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function getRoleAttribute( $attribute )
+    public function getRoleAttribute($attribute)
     {
         return $this->roleOptions()[$attribute];
     }
+
     public function roleOptions()
     {
         return [
@@ -48,15 +49,21 @@ class User extends Authenticatable
         ];
     }
 
-    public function getStatusAttribute( $attribute )
+    public function getStatusAttribute($attribute)
     {
         return $this->statusOptions()[$attribute];
     }
+
     public function statusOptions()
     {
         return [
             1 => 'Active',
             2 => 'Inactive',
         ];
+    }
+
+    public function products()
+    {
+        return $this->hasMany(Product::class);
     }
 }

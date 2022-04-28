@@ -43,7 +43,7 @@ class UserController extends Controller
     {
         $user->update($request->all('name', 'email', 'role'));
 
-        return redirect()->route('users.index', $user)->withStatus(__($user->name . ' successfully updated.'));
+        return redirect()->route('users.index')->withStatus(__($user->name . ' successfully updated.'));
     }
 
     public function activate(User $user)
@@ -52,7 +52,7 @@ class UserController extends Controller
             'status' => 1
         ]);
 
-        return redirect()->route('users.index', $user)->withStatus(__($user->name . ' successfully activated.'));
+        return redirect()->route('users.index')->withStatus(__($user->name . ' successfully activated.'));
     }
 
     public function deactivate(User $user)
@@ -61,6 +61,6 @@ class UserController extends Controller
             'status' => 2
         ]);
 
-        return redirect()->route('users.index', $user)->withStatus(__($user->name . ' successfully deactivated.'));
+        return redirect()->route('users.index')->withStatus(__($user->name . ' successfully deactivated.'));
     }
 }

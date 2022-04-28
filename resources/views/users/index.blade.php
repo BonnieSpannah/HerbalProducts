@@ -38,10 +38,10 @@
                                 <td class="text-center">
                                     @if(auth()->user()->role == 'Super Admin')
                                         @if($user->status == 'Active')
-                                            <a href="{{ route('users.edit', $user) }}" rel="tooltip" data-placement="bottom" title="Edit {{ $user->name }}" class="btn btn-round btn-warning btn-icon btn-sm">Edit</a>
-                                            <a href="{{ route('users.deactivate', $user) }}" rel="tooltip" data-placement="bottom" title="Edit {{ $user->name }}" class="btn btn-round btn-danger btn-icon btn-sm">Deactivate</a>
+                                            <a href="{{ route('users.edit', $user) }}" rel="tooltip" data-placement="bottom" title="Edit {{ $user->name }}" class="btn btn-round btn-info btn-icon btn-sm">Edit</a>
+                                            <a href="{{ route('users.deactivate', $user) }}" rel="tooltip" data-placement="bottom" title="Deactivate {{ $user->name }}" class="btn btn-round btn-danger btn-icon btn-sm">Deactivate</a>
                                         @else
-                                            <a href="{{ route('users.activate', $user) }}" rel="tooltip" data-placement="bottom" title="Edit {{ $user->name }}" class="btn btn-round btn-success btn-icon btn-sm">Activate</a>
+                                            <a href="{{ route('users.activate', $user) }}" rel="tooltip" data-placement="bottom" title="Activate {{ $user->name }}" class="btn btn-round btn-success btn-icon btn-sm">Activate</a>
                                         @endif
                                     @else
                                         -

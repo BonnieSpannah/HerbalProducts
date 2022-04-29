@@ -20,6 +20,7 @@
                             <th>Full name</th>
                             <th>Email</th>
                             <th>Role</th>
+                            <th>No of Products</th>
                             <th>Status</th>
                             <th>Updated At</th>
                             <th class="text-center">Manage</th>
@@ -33,6 +34,7 @@
                                 <td>{{ $user->name }}</td>
                                 <td>{{ $user->email }}</td>
                                 <td>{{ $user->role }}</td>
+                                <td>{{ $user->products_count }}</td>
                                 <td>{{ $user->status }}</td>
                                 <td>{{ $user->updated_at->format('j l, F Y') }}</td>
                                 <td class="text-center">

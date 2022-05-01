@@ -15,10 +15,8 @@
         </a>
         <div class="collapse" id="product-management">
             <ul class="nav flex-column sub-menu">
-                @if(auth()->user()->role == 'Super Admin')
-                    <li class="nav-item"> <a class="nav-link" href="{{ route('products.index') }}">All</a></li>
-                @endif
-                    <li class="nav-item"> <a class="nav-link" href="{{ route('products.create') }}">New</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{{ route('products.index') }}">All</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{{ route('products.create') }}">New</a></li>
                 {{--@if(in_array(auth()->user()->role, ['Super Admin', 'Human Admin']))
                     <li class="nav-item"> <a class="nav-link" href="#">Humans</a></li>
                 @endif

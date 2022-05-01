@@ -21,6 +21,7 @@
                             <th>Scientific name</th>
                             <th>Type</th>
                             <th>Treatment</th>
+                            <th>Created By</th>
                             <th>Updated At</th>
                             <th class="text-center">Manage</th>
                         </tr>
@@ -34,6 +35,7 @@
                                 <td>{{ $product->scientific_name }}</td>
                                 <td>{{ $product->type }}</td>
                                 <td>{{ $product->treatment }}</td>
+                                <td>{{ $product->user->name }}</td>
                                 <td>{{ $product->updated_at->format('j l, F Y') }}</td>
                                 <td class="text-center">
                                     @if($product->user_id == auth()->id() || auth()->user()->role == 'Super Admin')

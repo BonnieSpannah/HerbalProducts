@@ -31,7 +31,7 @@ class UserController extends Controller
             'password' => Hash::make('password')
         ]);
 
-        return redirect()->route('users.index', $user)->withStatus(__($user->name . ' successfully created.'));
+        return redirect()->route('users.index')->withStatus(__($user->name . ' successfully created.'));
     }
 
     public function edit(User $user)

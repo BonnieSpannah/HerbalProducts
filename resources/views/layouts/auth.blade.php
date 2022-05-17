@@ -20,12 +20,39 @@
     <link rel="stylesheet" href="{{ asset('star_admin_template') }}/css/vertical-layout-light/style.css">
     <!-- endinject -->
     <link rel="shortcut icon" href="{{ asset('star_admin_template') }}/images/favicon.png" />
+
+    <style type="text/css">
+        .animals-background {
+            background: url('{{ asset('images/animals.jpg') }}');
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 100vh;
+            width: 100%;
+        }
+        .herbs-background {
+            background: url('{{ asset('images/herbs.jpg') }}');
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 100vh;
+            width: 100%;
+        }
+        .animals-and-herbs-background {
+            background: url('{{ asset('images/animals-and-herbs.jpg') }}');
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 100vh;
+            width: 100%;
+        }
+    </style>
 </head>
 
 <body>
 <div class="container-scroller">
     <div class="container-fluid page-body-wrapper full-page-wrapper">
-        <div class="content-wrapper d-flex align-items-center auth px-0">
+        <div class="content-wrapper d-flex align-items-center auth px-0 animals-and-herbs-background">
             @yield('content')
         </div>
         <!-- content-wrapper ends -->

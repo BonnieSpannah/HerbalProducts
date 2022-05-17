@@ -27,6 +27,33 @@
 
     <link rel="stylesheet" href="{{ asset('star_admin_template') }}/vendors/select2/select2.min.css">
     <link rel="stylesheet" href="{{ asset('star_admin_template') }}/vendors/select2-bootstrap-theme/select2-bootstrap.min.css">
+
+    <style type="text/css">
+        .animals-background {
+            background: url('{{ asset('images/animals.jpg') }}');
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 100vh;
+            width: 100%;
+        }
+        .herbs-background {
+            background: url('{{ asset('images/herbs.jpg') }}');
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 100vh;
+            width: 100%;
+        }
+        .animals-and-herbs-background {
+            background: url('{{ asset('images/animals-and-herbs.jpg') }}');
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 100vh;
+            width: 100%;
+        }
+    </style>
 </head>
 <body>
 @auth()
@@ -61,12 +88,12 @@
                     <li class="nav-item dropdown d-none d-lg-block user-dropdown">
                         <a class="nav-link" id="UserDropdown" href="#" data-bs-toggle="dropdown" aria-expanded="false">
                             <img class="img-xs rounded-circle"
-                                 src="{{ asset('star_admin_template') }}/images/faces/face8.jpg"
+                                 src="{{ asset('star_admin_template') }}/images/faces/profile/profile.jpg"
                                  alt="{{ auth()->user()->name }}"> </a>
                         <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="UserDropdown">
                             <div class="dropdown-header text-center">
                                 <img class="img-md rounded-circle"
-                                     src="{{ asset('star_admin_template') }}/images/faces/face8.jpg"
+                                     src="{{ asset('star_admin_template') }}/images/faces/profile/profile.jpg"
                                      alt="Profile image">
                                 <p class="mb-1 mt-3 font-weight-semibold">{{ auth()->user()->name }}</p>
                                 <p class="fw-light text-muted mb-0">{{ auth()->user()->role }}</p>
@@ -92,7 +119,7 @@
             </nav>
             <!-- partial -->
             <div class="main-panel">
-                <div class="content-wrapper">
+                <div class="content-wrapper @if(auth()->user()->role == 'Human Admin') herbs-background @elseif(auth()->user()->role == 'Animal Admin') animals-background @else animals-and-herbs-background @endif">
                     @yield('content')
                 </div>
                 <!-- content-wrapper ends -->
